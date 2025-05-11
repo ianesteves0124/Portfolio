@@ -49,7 +49,7 @@ export default function Hero() {
               <Github size={20} />
             </Link>
             <Link
-              to='https://linkedin.com'
+              to='https://www.linkedin.com/in/ian-miles-esteves-904138279/'
               target='_blank'
               rel='noopener noreferrer'
               className='btn btn-circle btn-outline'
