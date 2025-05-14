@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState('nord');
 
   const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
+    const newTheme = theme === 'nord' ? 'business' : 'nord';
     setTheme(newTheme);
     document.documentElement.setAttribute('data-theme', newTheme);
   };
@@ -18,12 +18,13 @@ export default function Navbar() {
     // CLEAN UP
     return () => {
       setIsMenuOpen(false);
-      setTheme('dark');
+      setTheme('nord');
     };
   }, []);
+
   return (
     <div className='fixed top-0 left-0 right-0 z-50 px-4 transition-all'>
-      <div className='max-w-5xl mx-auto mt-4 bg-base-100 rounded-full px-6 py-2 flex items-center justify-between'>
+      <div className='max-w-5xl mx-auto mt-4 bg-base-100 rounded-full px-6 py-2 flex items-center justify-between shadow-2xl'>
         {/* Mobile Menu Button */}
         <div className='md:hidden'>
           <button className='btn btn-square btn-ghost' onClick={() => setIsMenuOpen(true)}>
@@ -32,7 +33,7 @@ export default function Navbar() {
         </div>
 
         <div>
-          <Link to='/' className='md:inline-block text-2xl text-blue-700 font-semibold '>
+          <Link to='/' className='md:inline-block text-2xl  font-semibold '>
             Portfolio
           </Link>
         </div>
@@ -41,36 +42,21 @@ export default function Navbar() {
         <div className='hidden md:flex flex-1 justify-center'>
           <ul className='menu menu-horizontal gap-4 font-medium '>
             <li>
-              <Link
-                to='/projects'
-                className='hover:text-blue-700 hover:bg-blue-100 hover:bg-opacity-60 hover:rounded-md transition-all'
-              >
-                Projects
-              </Link>
+              <Link to='/projects'>Projects</Link>
             </li>
             <li>
-              <Link
-                to='/resume'
-                className='hover:text-blue-700 hover:bg-blue-100 hover:bg-opacity-60 hover:rounded-md transition-all'
-              >
-                Resume
-              </Link>
+              <Link to='/resume'>Resume</Link>
             </li>
             <li>
               <Link
                 to='/education'
-                className='hover:text-blue-700 hover:bg-blue-100 hover:bg-opacity-60 hover:rounded-md transition-all'
+                // className='hover: hover:bg-blue-100 hover:bg-opacity-60 hover:rounded-md transition-all'
               >
                 Education
               </Link>
             </li>
             <li>
-              <Link
-                to='/contact'
-                className='hover:text-blue-700 hover:bg-blue-100 hover:bg-opacity-60 hover:rounded-md transition-all'
-              >
-                Contact
-              </Link>
+              <Link to='/contact'>Contact</Link>
             </li>
           </ul>
         </div>
@@ -78,7 +64,7 @@ export default function Navbar() {
         {/* Right Section: Theme + Title */}
         <div className='flex items-center gap-2'>
           <button onClick={toggleTheme} className='btn btn-circle btn-ghost'>
-            {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+            {theme === 'nord' ? <Moon size={20} /> : <Sun size={20} />}
           </button>
         </div>
       </div>
@@ -98,7 +84,7 @@ export default function Navbar() {
             onClick={(e) => e.stopPropagation()}
           >
             <div className='flex justify-between items-center mb-4'>
-              <span className='text-xl font-bold text-blue-700'>Menu</span>
+              <span className='text-xl font-bold '>Menu</span>
               <button
                 onClick={() => {
                   setTimeout(() => setIsMenuOpen(false), 300);

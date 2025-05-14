@@ -4,32 +4,45 @@ import { useEffect, useRef } from 'react';
 import { Download, CheckCircle } from 'lucide-react';
 
 const skills = [
-  { category: 'Frontend', items: ['React', 'Vite', 'HTML5', 'CSS3', 'JavaScript', 'TypeScript', 'Tailwind CSS'] },
-  { category: 'Backend', items: ['Node.js', 'Express', 'MongoDB', 'Firebase'] },
-  { category: 'Tools', items: ['Git', 'GitHub', 'VS Code', 'Figma', 'Jira'] }
+  {
+    category: 'Frontend',
+    items: [
+      'React',
+      'Vite',
+      'Ionic React',
+      'HTML5',
+      'CSS3',
+      'JavaScript',
+      'TypeScript',
+      'Tailwind CSS',
+      'Ant Design',
+      'DaisyUI'
+    ]
+  },
+  { category: 'Backend', items: ['Node.js', 'Express', 'Postgresql', 'Sequelize'] },
+  { category: 'Tools', items: ['GitHub', 'VS Code', 'Vercel', 'Postman', 'XCode', 'Capacitor'] }
 ];
 
 const experiences = [
   {
-    title: 'Senior Frontend Developer',
-    company: 'Tech Company',
-    period: '2021 - Present',
+    title: 'Part Time Instructor',
+    company: 'Lyceum of Subic Bay, Inc.',
+    period: 'Aug 2023 - Dec 2023',
     description:
-      'Led the development of responsive web applications using React and Vite. Implemented state management with Redux and optimized performance.'
+      'Worked as a part time instructor under the Department of Engineering. Taught Programming Logic and Design, Basic Fundamentals of Network Security and Engineering Ergonomics'
   },
   {
-    title: 'Web Developer',
-    company: 'Digital Agency',
-    period: '2018 - 2021',
+    title: 'Programmer',
+    company: 'United Auctioneers, Inc.',
+    period: 'Jul 2023 - Jan 2024',
     description:
-      'Developed and maintained client websites. Collaborated with designers to implement responsive designs and interactive features.'
+      'Developing a responsive web application using Vite React, implemented PERN Stack along with Redux for state management, Axios for HTTPS Requests, and TailwindCSS and Ant Design for the user interface.'
   },
   {
-    title: 'Junior Developer',
-    company: 'Startup Inc.',
-    period: '2016 - 2018',
-    description:
-      'Assisted in the development of web applications. Gained experience in frontend technologies and agile development methodologies.'
+    title: 'Programmer I',
+    company: 'United Auctioneers, Inc.',
+    period: 'Jan 2024 - Present',
+    description: 'Developing and maintaining in-house web application, Following Agile Methodology'
   }
 ];
 

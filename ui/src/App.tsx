@@ -1,5 +1,4 @@
 'use client';
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './pages/Navbar';
 import Hero from './pages/Hero';

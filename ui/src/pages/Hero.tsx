@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { Github, Linkedin, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import avatar from '../assets/avatar_cv.png';
 
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false);
@@ -22,7 +23,7 @@ export default function Hero() {
         <div className={`${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
           <div className='avatar'>
             <div className='w-48 h-48 md:w-64 md:h-64 rounded-full ring ring-primary ring-offset-base-200 ring-offset-4 overflow-hidden animate-pulse-slow'>
-              {/*  */}
+              <img src={avatar} alt='Profile Picture' />
             </div>
           </div>
         </div>
@@ -32,8 +33,8 @@ export default function Hero() {
             Junior Fullstack Developer
           </p>
           <p className={`py-6 ${isVisible ? 'animate-slide-up animate-delay-200' : 'opacity-0'}`}>
-            A <span className='font-semibold text-blue-700'>Computer Engineer</span> with expertise in creating
-            responsive and user-friendly web applications. Specialized in modern fullstack technologies.
+            A Computer Engineer with expertise in creating responsive and user-friendly web applications. Specialized in
+            modern fullstack technologies.
           </p>
           <div
             className={`flex justify-center lg:justify-start gap-4 mb-6 ${
