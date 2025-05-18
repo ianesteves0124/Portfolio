@@ -7,7 +7,26 @@ const config = {
     'app/**/*.{ts,tsx}',
     'pages/**/*.{ts,tsx}'
   ],
-  plugins: [require('tailwindcss-animate'), require('daisyui')]
+  plugins: [require('tailwindcss-animate'), require('daisyui')],
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: [
+          'system-ui',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Segoe UI',
+          'Roboto',
+          'Oxygen',
+          'Ubuntu',
+          'Cantarell',
+          'Open Sans',
+          'Helvetica Neue',
+          'sans-serif'
+        ]
+      }
+    }
+  }
 };
 
 export default config;

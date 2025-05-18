@@ -75,41 +75,46 @@ export default function Resume() {
   }, []);
 
   return (
-    <section id='resume' className='py-20 bg-base-200 section-animate' ref={sectionRef}>
+    <section className='py-20 bg-transparent section-animate' ref={sectionRef}>
       <div className='container mx-auto px-4'>
-        <div className='flex flex-col md:flex-row justify-between items-center mb-16 gap-4'>
+        <div className='flex flex-col md:flex-row justify-center items-center mt-10 mb-16 gap-4'>
           <h2 className='text-4xl font-bold'>Resume & Skills</h2>
-          <a href='/resume.pdf' download className='btn btn-primary'>
+          {/* <a href='/resume.pdf' download className='btn btn-primary'>
             <Download size={16} className='mr-2' /> Download CV
-          </a>
+          </a> */}
         </div>
 
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-12'>
           <div>
-            <h3 className='text-2xl font-semibold mb-6'>Work Experience</h3>
+            {/* <h3 className='text-2xl font-semibold mb-6'>Work Experience</h3> */}
             <div className='timeline timeline-vertical'>
               {experiences.map((exp, index) => (
                 <div key={index} className='timeline-item'>
-                  <div className='timeline-start'>{exp.period}</div>
+                  {/* <div className='timeline-start'>{exp.period}</div> */}
                   <div className='timeline-middle'>
                     <div className='badge badge-primary badge-outline'>{index + 1}</div>
                   </div>
                   <div className='timeline-end timeline-box'>
-                    <h4 className='font-bold'>{exp.title}</h4>
-                    <p className='text-sm font-medium'>{exp.company}</p>
+                    <h4 className='font-bold text-lg'>{exp.title}</h4>
+                    <p className='text-sm font-medium'>
+                      {exp.company} <span className='text-primary'>({exp.period})</span>
+                    </p>
                     <p className='mt-2'>{exp.description}</p>
                   </div>
-                  {index < experiences.length - 1 && <hr />}
+                  {/*  {index < experiences.length - 1 && <hr />} */}
                 </div>
               ))}
+              <a href='/resume.pdf' download className='btn btn-primary'>
+                <Download size={16} className='mr-2' /> Download CV
+              </a>
             </div>
           </div>
 
           <div>
-            <h3 className='text-2xl font-semibold mb-6'>Skills</h3>
+            {/* <h3 className='text-2xl font-semibold mb-6'>Skills</h3> */}
             <div className='space-y-6'>
               {skills.map((skillGroup, groupIndex) => (
-                <div key={groupIndex} className='card bg-base-100 shadow-md'>
+                <div key={groupIndex} className='card bg-transparent shadow-md'>
                   <div className='card-body'>
                     <h4 className='card-title'>{skillGroup.category}</h4>
                     <div className='grid grid-cols-1 sm:grid-cols-2 gap-2'>

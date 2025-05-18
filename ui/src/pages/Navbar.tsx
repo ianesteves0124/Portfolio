@@ -12,10 +12,23 @@ export default function Navbar() {
     const newTheme = theme === 'nord' ? 'business' : 'nord';
     setTheme(newTheme);
     document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
   };
 
   useEffect(() => {
-    // CLEAN UP
+    // Check if user has a saved preference
+    const savedTheme = localStorage.getItem('theme') as 'nord' | 'business' | null;
+
+    if (savedTheme) {
+      setTheme(savedTheme);
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+      // If no saved preference, use system preference
+      setTheme('nord');
+      document.documentElement.setAttribute('data-theme', 'nord');
+    }
+
+    // CLEAN UPßß
     return () => {
       setIsMenuOpen(false);
       setTheme('nord');
