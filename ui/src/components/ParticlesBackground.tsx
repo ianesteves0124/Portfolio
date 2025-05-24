@@ -26,7 +26,7 @@ export default function ParticlesBackground(props: ParticlesBackgroundProps) {
         particles: '#A6ADBA' // business theme muted color
       };
     } else {
-      // Nord theme (light)
+      // nord theme (light)
       return {
         background: '#ECEFF4', // nord theme light background
         particles: '#4C566A' // nord theme darker color for visibility on light background

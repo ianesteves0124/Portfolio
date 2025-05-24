@@ -5,19 +5,19 @@ import { GraduationCap, Calendar, MapPin } from 'lucide-react';
 
 const education = [
   {
-    degree: 'Master of Computer Science',
-    institution: 'University of Technology',
-    location: 'San Francisco, CA',
-    period: '2014 - 2016',
-    description: 'Specialized in Web Technologies and Software Engineering. Graduated with honors.'
+    degree: 'Bachelor of Science in Computer Engineering',
+    institution: 'Lyceum of Subic Bay, Inc.',
+    location: 'Subic Bay Freeport Zone',
+    period: '2019-2023',
+    description: 'Specialized in Logic and Designs, Computer Security, and Circuits & Electronics fundamentals.'
   },
   {
-    degree: 'Bachelor of Science in Computer Science',
-    institution: 'State University',
-    location: 'Boston, MA',
-    period: '2010 - 2014',
+    degree: 'Information and Communication Technology (SHS)',
+    institution: 'Comteq Computer and Business College',
+    location: 'Olongapo City',
+    period: '2017-2019',
     description:
-      'Focused on programming fundamentals, data structures, and algorithms. Participated in coding competitions.'
+      'Focused on programming fundamentals, network fundamentals, and basic software and hardware troubleshooting.'
   }
 ];
 
@@ -69,7 +69,7 @@ export default function Education() {
 
   return (
     <section id='education' className='py-20 bg-base-100 section-animate' ref={sectionRef}>
-      <div className='container mx-auto px-4'>
+      <div className='container mt-10 mx-auto px-4'>
         <h2 className='text-4xl font-bold text-center mb-16'>Education & Certifications</h2>
 
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-12'>
@@ -119,24 +119,17 @@ export default function Education() {
               <div className='space-y-4'>
                 <div>
                   <div className='flex justify-between mb-1'>
-                    <span className='font-medium'>English</span>
+                    <span className='font-medium'>Filipino</span>
                     <span>Native / Fluent</span>
                   </div>
                   <progress className='progress progress-primary w-full' value='100' max='100'></progress>
                 </div>
                 <div>
                   <div className='flex justify-between mb-1'>
-                    <span className='font-medium'>Spanish</span>
-                    <span>Intermediate</span>
+                    <span className='font-medium'>English</span>
+                    <span>Fluent</span>
                   </div>
-                  <progress className='progress progress-primary w-full' value='60' max='100'></progress>
-                </div>
-                <div>
-                  <div className='flex justify-between mb-1'>
-                    <span className='font-medium'>French</span>
-                    <span>Basic</span>
-                  </div>
-                  <progress className='progress progress-primary w-full' value='30' max='100'></progress>
+                  <progress className='progress progress-primary w-full' value='50' max='100'></progress>
                 </div>
               </div>
             </div>
