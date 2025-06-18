@@ -1,50 +1,7 @@
 'use client';
-
 import { useEffect, useRef } from 'react';
 import { Download, CheckCircle } from 'lucide-react';
-
-const skills = [
-  {
-    category: 'Frontend',
-    items: [
-      'React',
-      'Vite',
-      'Ionic React',
-      'HTML5',
-      'CSS3',
-      'JavaScript',
-      'TypeScript',
-      'Tailwind CSS',
-      'Ant Design',
-      'DaisyUI'
-    ]
-  },
-  { category: 'Backend', items: ['Node.js', 'Express', 'PostgreSQL', 'Sequelize'] },
-  { category: 'Tools', items: ['GitHub', 'VS Code', 'Vercel', 'Postman', 'XCode', 'Capacitor'] }
-];
-
-const experiences = [
-  {
-    title: 'Part Time Instructor',
-    company: 'Lyceum of Subic Bay, Inc.',
-    period: 'Aug 2023 - Dec 2023',
-    description:
-      'Worked as a part time instructor under the Department of Engineering. Taught Programming Logic and Design, Basic Fundamentals of Network Security and Engineering Ergonomics'
-  },
-  {
-    title: 'Programmer',
-    company: 'United Auctioneers, Inc.',
-    period: 'Jul 2023 - Jan 2024',
-    description:
-      'Developed a responsive web application using Vite React, implemented PERN Stack along with Redux for state management, Axios for HTTP requests, and TailwindCSS and Ant Design for the user interface.'
-  },
-  {
-    title: 'Programmer I',
-    company: 'United Auctioneers, Inc.',
-    period: 'Jan 2024 - Present',
-    description: 'Developing and maintaining in-house web application, following Agile methodology.'
-  }
-];
+import { skills, experiences } from '../utils/data';
 
 export default function Resume() {
   const sectionRef = useRef(null);
@@ -81,12 +38,13 @@ export default function Resume() {
     let timeout: NodeJS.Timeout;
     let isUserScrolling = false;
 
+    /* pause auto-scroll for 3 seconds after user scrolls */
     const handleUserScroll = () => {
       isUserScrolling = true;
       clearTimeout(timeout);
       timeout = setTimeout(() => {
         isUserScrolling = false;
-      }, 3000); // pause auto-scroll for 3 seconds after user scrolls
+      }, 3000);
     };
 
     const interval = setInterval(() => {
@@ -115,7 +73,7 @@ export default function Resume() {
   }, []);
 
   return (
-    <section className='py-20 bg-transparent section-animate' ref={sectionRef}>
+    <section className='py-20 section-animate' ref={sectionRef}>
       <div className='container mx-auto px-4'>
         <div className='flex flex-col md:flex-row justify-center items-center mt-10 mb-16 gap-4'>
           <h2 className='text-4xl font-bold'>Resume & Skills</h2>
@@ -155,8 +113,8 @@ export default function Resume() {
             >
               {skills.map((skillGroup, index) => (
                 <div key={index} className='carousel-item w-full justify-center snap-start'>
-                  <div className='card bg-base-100 w-full'>
-                    <div className='card-body'>
+                  <div className='timeline w-full'>
+                    <div className='timeline-box w-full shadow-lg'>
                       <h4 className='card-title'>
                         <span className='p-1 rounded-lg text-primary'>{skillGroup.category}</span>
                       </h4>

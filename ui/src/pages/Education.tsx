@@ -2,42 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import { GraduationCap, Calendar, MapPin } from 'lucide-react';
-
-const education = [
-  {
-    degree: 'Bachelor of Science in Computer Engineering',
-    institution: 'Lyceum of Subic Bay, Inc.',
-    location: 'Subic Bay Freeport Zone',
-    period: '2019-2023',
-    description: 'Specialized in Logic and Designs, Computer Security, and Circuits & Electronics fundamentals.'
-  },
-  {
-    degree: 'Information and Communication Technology (SHS)',
-    institution: 'Comteq Computer and Business College',
-    location: 'Olongapo City',
-    period: '2017-2019',
-    description:
-      'Focused on programming fundamentals, network fundamentals, and basic software and hardware troubleshooting.'
-  }
-];
-
-const certifications = [
-  {
-    name: 'Advanced React and Redux',
-    issuer: 'Udemy',
-    date: 'January 2022'
-  },
-  {
-    name: 'Full Stack Web Development',
-    issuer: 'Coursera',
-    date: 'June 2021'
-  },
-  {
-    name: 'AWS Certified Developer',
-    issuer: 'Amazon Web Services',
-    date: 'March 2020'
-  }
-];
+import { education, certifications } from '../utils/data';
 
 export default function Education() {
   const sectionRef = useRef(null);
