@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { ExternalLink, Github } from 'lucide-react';
+// import { ExternalLink, Github } from 'lucide-react';
 
 const projects = [
   {
@@ -46,17 +46,17 @@ const projects = [
   }
 ];
 
-const categories = [
+/* const categories = [
   { value: 'all', label: 'All Projects' },
   { value: 'frontend', label: 'Frontend' },
   { value: 'backend', label: 'Backend' },
   { value: 'fullstack', label: 'Full Stack' }
-];
+]; */
 
 export default function Projects() {
   const sectionRef = useRef(null);
-  const [filter, setFilter] = useState('all');
-  const [filteredProjects, setFilteredProjects] = useState(projects);
+  const [filter /* _setFilter */] = useState('all');
+  const [, /* _filteredProjects */ setFilteredProjects] = useState(projects);
 
   useEffect(() => {
     if (filter === 'all') {
@@ -94,8 +94,10 @@ export default function Projects() {
   return (
     <section id='projects' className='py-20 bg-base-100 section-animate' ref={sectionRef}>
       <div className='container mx-auto px-4'>
-        <h2 className='text-4xl font-bold text-center mb-8'>My Projects</h2>
-
+        <div className='flex flex-col md:flex-row justify-center items-center mt-10 mb-16 gap-4'>
+          <h2 className='text-4xl font-bold'>My Projects</h2>
+        </div>
+        {/*
         <div className='flex justify-center mb-8'>
           <div className='join'>
             {categories.map((category) => (
@@ -159,6 +161,7 @@ export default function Projects() {
             </div>
           ))}
         </div>
+        */}
       </div>
     </section>
   );

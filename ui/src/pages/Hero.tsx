@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Instagram, Linkedin, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import avatar from '../assets/avatar_cv.png';
 
@@ -59,6 +59,14 @@ export default function Hero() {
             </Link>
             <Link to='mailto:ianmiles.esteves@gmail.com' className='btn btn-circle btn-outline'>
               <Mail size={20} />
+            </Link>
+            <Link
+              to='https://www.instagram.com/iann.esteves/'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='btn btn-circle btn-outline'
+            >
+              <Instagram size={20} />
             </Link>
           </div>
           <Link
