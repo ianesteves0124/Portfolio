@@ -7,7 +7,7 @@ import type { Container, Engine } from 'tsparticles-engine';
 import { loadSlim } from 'tsparticles-slim';
 
 interface ParticlesBackgroundProps {
-  theme?: 'nord' | 'business';
+  theme?: 'cupcake' | 'dark';
 }
 
 export default function ParticlesBackground(props: ParticlesBackgroundProps) {
@@ -20,16 +20,16 @@ export default function ParticlesBackground(props: ParticlesBackgroundProps) {
 
   // Get theme-specific colors
   const getThemeColors = useCallback(() => {
-    if (theme === 'business') {
+    if (theme === 'dark') {
       return {
-        background: '#1D232A', // business theme dark background
-        particles: '#A6ADBA' // business theme muted color
+        background: '#1D232A', // dark theme dark background
+        particles: '#A6ADBA' // dark theme muted color
       };
     } else {
-      // nord theme (light)
+      // cupcake theme (light)
       return {
-        background: '#ECEFF4', // nord theme light background
-        particles: '#4C566A' // nord theme darker color for visibility on light background
+        background: '#ECEFF4', // cupcake theme light background
+        particles: '#4C566A' // cupcake theme darker color for visibility on light background
       };
     }
   }, [theme]);
