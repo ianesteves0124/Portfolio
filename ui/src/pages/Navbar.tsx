@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [theme, setTheme] = useState('nord');
+  const [theme, setTheme] = useState('cupcake');
 
   const toggleTheme = () => {
-    const newTheme = theme === 'nord' ? 'business' : 'nord';
+    const newTheme = theme === 'cupcake' ? 'dark' : 'cupcake';
     setTheme(newTheme);
     document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
@@ -17,21 +17,21 @@ export default function Navbar() {
 
   useEffect(() => {
     // Check if user has a saved preference
-    const savedTheme = localStorage.getItem('theme') as 'nord' | 'business' | null;
+    const savedTheme = localStorage.getItem('theme') as 'cupcake' | 'dark' | null;
 
     if (savedTheme) {
       setTheme(savedTheme);
       document.documentElement.setAttribute('data-theme', savedTheme);
     } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
       // If no saved preference, use system preference
-      setTheme('nord');
-      document.documentElement.setAttribute('data-theme', 'nord');
+      setTheme('cupcake');
+      document.documentElement.setAttribute('data-theme', 'cupcake');
     }
 
     // CLEAN UPßß
     return () => {
       setIsMenuOpen(false);
-      setTheme('nord');
+      setTheme('cupcake');
     };
   }, []);
 
@@ -77,7 +77,7 @@ export default function Navbar() {
         {/* Right Section: Theme + Title */}
         <div className='flex items-center gap-2'>
           <button onClick={toggleTheme} className='btn btn-circle btn-ghost'>
-            {theme === 'nord' ? <Moon size={20} /> : <Sun size={20} />}
+            {theme === 'cupcake' ? <Moon size={20} /> : <Sun size={20} />}
           </button>
         </div>
       </div>
@@ -86,7 +86,7 @@ export default function Navbar() {
       {isMenuOpen && (
         <>
           <div
-            className='fixed inset-0 bg-black/50 z-40 backdrop-blur-sm'
+            className='fixed inset-0 bg-dark/50 z-40 backdrop-blur-sm'
             onClick={() => {
               setTimeout(() => setIsMenuOpen(false), 300);
             }}

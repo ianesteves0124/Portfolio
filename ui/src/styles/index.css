@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 
 @plugin "daisyui" {
-  themes: nord --default, business;
+  themes: cupcake --default, dark;
   base: true;
   styled: true;
   utils: true;
